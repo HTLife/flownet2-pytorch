@@ -35,6 +35,11 @@ Dataloaders for FlyingChairs, FlyingThings, ChairsSDHom and ImagesFromFolder are
 
 L1 and L2 losses with multi-scale support are available in [losses.py](./losses.py). <br />
 
+## Dependencies
+
+   pip3 install cffi tensorboardx setproctitle colorama tqdm
+   
+
 ## Installation 
 
     # get flownet2-pytorch source
@@ -72,12 +77,12 @@ We've included caffe pre-trained models. Should you use these pre-trained weight
 ## Training and validation
 
     # Example on MPISintel Final and Clean, with L1Loss on FlowNet2 model
-    python main.py --batch_size 8 --model FlowNet2 --loss=L1Loss --optimizer=Adam --optimizer_lr=1e-4 \
+    python3 main.py --batch_size 8 --model FlowNet2 --loss=L1Loss --optimizer=Adam --optimizer_lr=1e-4 \
     --training_dataset MpiSintelFinal --training_dataset_root /path/to/mpi-sintel/final/dataset  \
     --validation_dataset MpiSintelClean --validation_dataset_root /path/to/mpi-sintel/clean/dataset
 
     # Example on MPISintel Final and Clean, with MultiScale loss on FlowNet2C model 
-    python main.py --batch_size 8 --model FlowNet2C --optimizer=Adam --optimizer_lr=1e-4 --loss=MultiScale --loss_norm=L1 \
+    python3 main.py --batch_size 8 --model FlowNet2C --optimizer=Adam --optimizer_lr=1e-4 --loss=MultiScale --loss_norm=L1 \
     --loss_numScales=5 --loss_startScale=4 --optimizer_lr=1e-4 --crop_size 384 512 \
     --training_dataset FlyingChairs --training_dataset_root /path/to/flying-chairs/dataset  \
     --validation_dataset MpiSintelClean --validation_dataset_root /path/to/mpi-sintel/clean/dataset
