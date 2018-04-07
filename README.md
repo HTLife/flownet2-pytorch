@@ -37,7 +37,7 @@ L1 and L2 losses with multi-scale support are available in [losses.py](./losses.
 
 ## Dependencies
 
-   pip3 install cffi tensorboardx setproctitle colorama tqdm
+   pip3 install cffi tensorboardx setproctitle colorama tqdm pytz
    
 
 ## Installation 
